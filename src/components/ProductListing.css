@@ -1,0 +1,8 @@
+
+.productListing {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}

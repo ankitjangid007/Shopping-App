@@ -1,0 +1,27 @@
+.navbar {
+    background: linear-gradient(353deg, black, transparent);
+    margin-bottom: 20px;
+}
+
+.logo {
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.logo a {
+    color: #000;
+}
+
+.logo a:hover {
+    text-decoration: none;
+    color: rgb(243, 113, 7);
+}
+
+.logo span {
+    font-size: larger;
+    font-weight: bold;
+    font-family: fantasy;
+    letter-spacing: 0.6rem;
+}

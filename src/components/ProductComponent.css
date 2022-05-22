@@ -1,0 +1,49 @@
+
+.productComponent {
+    box-sizing: border-box;
+    display: flex;
+    padding: 10px;
+}
+
+.productComponent > a {
+    text-decoration: none;
+}
+
+.card {
+    box-shadow: 0px 5px 25px #00000042 !important;
+    border: none;
+}
+
+.card a {
+    text-decoration: none;
+    color: #000;
+}
+
+.card a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.card-img-top {
+    height: 250px;
+    padding: 20px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title {
+    font-weight: 600;
+}
+
+.price {
+    font-weight: 600;
+}
+
+.category {
+    font-size: 12px;
+    color: #ccc;
+}
