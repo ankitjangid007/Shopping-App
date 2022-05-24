@@ -19,3 +19,17 @@ export const removeSelectedProduct = () =>  {
         type: ActionTypes.REMOVE_SELECTED_PRODUCT
     }
 }
+
+export const AddProductToWishlist = (product) => {
+    return {
+        type: ActionTypes.ADD_TO_WISHLIST,
+        payload: product
+    }
+}
+
+export const removeWishlistedItem = (id) => {
+    return {
+        type: ActionTypes.REMOVE_FROM_WISHLIST,
+        payload: id
+    }
+}

@@ -25,3 +25,21 @@
     font-family: fantasy;
     letter-spacing: 0.6rem;
 }
+
+.wishlist_icon {
+    color: #fff;
+    position: relative;
+}
+
+.wishlist_icon > svg {
+    fill: #fff;
+    font-size: 22px;
+}
+
+.badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: tomato;
+    border-radius: 50%;
+}
