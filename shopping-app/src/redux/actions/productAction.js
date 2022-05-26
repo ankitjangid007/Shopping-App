@@ -33,3 +33,17 @@ export const removeWishlistedItem = (id) => {
         payload: id
     }
 }
+
+export const addProductToCart = (item) => {
+    return {
+        type: ActionTypes.ADD_TO_CART,
+        paylaod: item
+    }
+}
+
+export const removeFromCart = (id) => {
+    return {
+        type: ActionTypes.REMOVE_FROM_CART,
+        paylaod: id
+    }
+}

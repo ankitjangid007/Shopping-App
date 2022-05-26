@@ -1,0 +1,155 @@
+
+.empty__list {
+    width: 100vw;
+    padding: 20px;
+}
+
+.item {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.wishlist_header {
+    padding: 20px;
+}
+
+.wishlist_header h5 {
+    font-weight: bolder;
+}
+
+.wishlist_header h5 span {
+    color: #939393;
+    font-size: 15px;
+}
+
+.img {
+    display: flex;
+    width: 10%;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.img img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.card_border {
+    border-top: 1px solid #ddd;
+    display: flex;
+    flex-direction: row !important;
+}
+
+.card_details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.wishlist__stock {
+    color: #05af05;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.wishlist__rating {
+    background-color: #05af05;
+    width: fit-content;
+    padding: 0 4px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.wishlist__rating > svg {
+    font-size: 14px;
+    margin-left: 3px;
+}
+
+.rating__count {
+    color: #939393;
+    margin-left: 10px;
+}
+
+.wishlist__title {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px 0;
+}
+
+.wishlist__price {
+    font-weight: 700;
+    padding-top: 10px;
+}
+
+.card_details .btn {
+    width: fit-content;
+    margin-left: 85%;
+    margin-top: -4%;
+} 
+
+.card_details > svg {
+    margin-left: 96%;
+    margin-bottom: -10px;
+    font-size: 20px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.card_details > svg:hover {
+    color: #000;
+}
+
+.buttons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.remove_btn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .card_border {
+        margin-bottom: 10px;
+    }
+    .card_details .btn {
+        width: fit-content;
+        margin-left: 82%;
+        margin-top: -7%;
+    }
+    .card_details > svg {
+        margin-bottom: -4%;
+    }
+}
+
+
+@media (max-width: 425px) {
+    .card_border {
+        margin-bottom: 0;
+    }
+    .item {
+        display: block !important;
+    }
+    .img {
+        width: 100%;
+        justify-content: center;
+    }
+    .img img {
+        width: 60%;
+    }
+    .card_details .btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .card_details > svg {
+        display: none;
+    }
+    .remove_btn {
+        display: block;
+    }
+}

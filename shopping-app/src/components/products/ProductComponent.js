@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import './ProductComponent.css'
 import { BsHeart, BsHeartFill } from 'react-icons/bs'
-import { AddProductToWishlist, removeWishlistedItem } from '../redux/actions/productAction'
+import { AddProductToWishlist, removeWishlistedItem } from '../../redux/actions/productAction'
 
 
 const ProductComponent = () => {
@@ -14,7 +14,7 @@ const ProductComponent = () => {
 
   const whistlistItemId = items.map(item => item.id)
   
-  const addToWishlist = (item) => {  
+  const addToWishlist = (item) => {
     dispatch(AddProductToWishlist({ id: item.id, title: item.title, image: item.image, price: item.price, category: item.category, description: item.description, rating: item.rating }))
   }
   
@@ -33,7 +33,7 @@ const ProductComponent = () => {
               <Link to={`/product/${id}`}>
                   <img className="card-img-top" src={image} alt={title} />
               </Link>
-                  <hr style={{width: '80%'}} />
+                  <hr />
                   <div className="card-body">
                       <div className="title">{title}</div>
                       <div className="details">

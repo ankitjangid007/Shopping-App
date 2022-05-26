@@ -1,9 +1,9 @@
 import './App.css';
-import Header from './components/Header';
+import Header from './components/header/Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ProductListing from './components/ProductListing';
-import ProductDetail from './components/ProductDetail';
-import Wishlist from './components/Wishlist';
+import ProductDetail from './components/productDetail/ProductDetail';
+import Wishlist from './components/wishlist/Wishlist';
 
 function App() {
   return (

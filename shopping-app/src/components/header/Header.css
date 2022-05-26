@@ -3,6 +3,12 @@
     margin-bottom: 20px;
 }
 
+@media(max-width: 425px){
+    .navbar {
+        margin-bottom: 0px;
+    }
+}
+
 .logo {
     justify-content: center;
     align-items: center;
@@ -22,24 +28,52 @@
 .logo span {
     font-size: larger;
     font-weight: bold;
-    font-family: fantasy;
+    font-family: 'Roboto', sans-serif;
     letter-spacing: 0.6rem;
 }
 
-.wishlist_icon {
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    font-size: 22px;
     color: #fff;
-    position: relative;
 }
 
-.wishlist_icon > svg {
-    fill: #fff;
-    font-size: 22px;
+.icons > a {
+    color: #fff;
+}
+
+.cart__icon {
+    position: relative;
+    margin-right: 20px;
+}
+
+.wishlist_icon {
+    position: relative;
+    margin-right: 20px;
 }
 
 .badge {
+    font-size: 12px;
     position: absolute;
-    top: -8px;
+    top: -4px;
     right: -8px;
     background-color: tomato;
     border-radius: 50%;
+}
+
+.bar__icon {
+    color: #fff;
+    font-size: 22px;
+    display: none;
+}
+
+@media (max-width: 768px)  {
+    .bar__icon {
+        display: block;
+    }
+    .icons {
+        display: none;
+    }
 }

@@ -19,6 +19,12 @@
     color: #000;
 }
 
+.card hr {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .card a:hover {
     text-decoration: none;
     color: #000;
@@ -37,6 +43,13 @@
 
 .title {
     font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title:hover {
+    white-space: inherit;
 }
 
 .price {

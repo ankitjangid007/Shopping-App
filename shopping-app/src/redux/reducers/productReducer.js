@@ -43,8 +43,8 @@ const setWishlistReducer = (state={items: []}, {type, payload}) => {
                 }
                 return false
             })
-            let wishlistItems = state.items
-            let newItem = wishlistItems.slice()
+            let cartItems = state.items
+            let newItem = cartItems.slice()
 
             if(itemExists) {
                 newItem = newItem.filter(item => item !== payload);
@@ -69,4 +69,16 @@ const setWishlistReducer = (state={items: []}, {type, payload}) => {
     }
 }
 
-export { productReducer, selectedProductReducer, setWishlistReducer }
+const setCartItemReducer = (state={cartItem: []}, {type, payload}) => {
+    console.log(payload)
+    switch(type) {
+        case ActionTypes.ADD_TO_CART : 
+            return {
+                ...state,
+                cartItem : [...state.cartItem, payload]
+            }
+        default: return state
+    }
+}
+
+export { productReducer, selectedProductReducer, setWishlistReducer, setCartItemReducer }
