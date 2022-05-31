@@ -25,7 +25,6 @@ const ProductListing = () => {
 
   return (
     <div className="productListing row m-0">
-
       <ProductComponent />
     </div>
   );

@@ -34,8 +34,7 @@ const ProductDetail = () => {
   }
 
 
-
-   return (
+  return (
       <div className="container">
         {Object.keys(product).length === 0 ? (
           <div>Loading product details...</div>
@@ -69,7 +68,6 @@ const ProductDetail = () => {
                     <div className="title">{title}</div>
                     <div className="price">Price: <span>${price}</span></div>
                     <div className="description">Description: <span>{description}</span></div>
-                    {/* {console.log('product: ', product)} */}
                     <button className='btn btn-outline-success' onClick={() => addCartItem(product)}>Add to Cart</button>
                   </div>
               </div>

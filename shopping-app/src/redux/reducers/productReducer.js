@@ -70,13 +70,19 @@ const setWishlistReducer = (state={items: []}, {type, payload}) => {
 }
 
 const setCartItemReducer = (state={cartItem: []}, {type, payload}) => {
-    console.log(payload)
     switch(type) {
         case ActionTypes.ADD_TO_CART : 
             return {
                 ...state,
-                cartItem : [...state.cartItem, payload]
+                cartItem : [...state.cartItem, payload] 
             }
+        
+        case ActionTypes.REMOVE_FROM_CART: 
+            return {
+                ...state,
+                cartItem: state.cartItem.filter(item => item.id !== payload)
+            }
+        
         default: return state
     }
 }

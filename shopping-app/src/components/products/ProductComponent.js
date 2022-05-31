@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import './ProductComponent.css'
 import { BsHeart, BsHeartFill } from 'react-icons/bs'
-import { AddProductToWishlist, removeWishlistedItem } from '../../redux/actions/productAction'
+import { addProductToCart, AddProductToWishlist, removeWishlistedItem } from '../../redux/actions/productAction'
 
 
 const ProductComponent = () => {
@@ -22,6 +22,10 @@ const ProductComponent = () => {
     if(whistlistItemId.includes(item.id)) {
       dispatch(removeWishlistedItem(item.id))
     }
+  }
+
+  const addCartItem = (item) => {
+    dispatch(addProductToCart(item))
   }
 
 
@@ -51,6 +55,9 @@ const ProductComponent = () => {
                         }
                       </div>
                   </div>
+                  <Link to='/cart'>
+                    <button className="btn btn-primary w-100" onClick={() => addCartItem(product)}>BUY</button>
+                  </Link>
             </div>
       </div>
     );

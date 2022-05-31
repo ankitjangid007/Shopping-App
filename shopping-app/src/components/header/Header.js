@@ -8,7 +8,8 @@ import { useSelector } from 'react-redux'
 const Header = () => {
 
   const wishlistCount = useSelector(state => state.wishlist.items.length)
-  
+  const cartCount = useSelector(state => state.cart.cartItem.length)
+
   return (
     <div className='navbar navbar-default navbar-fixed-top'>
       <div className="logo">
@@ -26,7 +27,7 @@ const Header = () => {
         <Link to='/cart'>
           <div className="cart__icon">
             <FaShoppingCart />
-            <span className='badge'>0</span>
+            <span className='badge'>{cartCount}</span>
           </div>
         </Link>
 
