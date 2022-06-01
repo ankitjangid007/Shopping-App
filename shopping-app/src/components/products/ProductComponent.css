@@ -65,4 +65,16 @@
     float: right;
     margin-top: -20px;
     cursor: pointer;
+    height: 30px;
+    width: 30px;
+    background-color: #cbcbcb;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.icon-color-white > svg {
+    fill: #fff;
 }

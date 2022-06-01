@@ -10,9 +10,10 @@ const Cart = () => {
   const items =  useSelector(state => state.cart.cartItem)
   const dispatch = useDispatch()
   const totalPrice = items.reduce((amount, item) => item.price + amount, 0)
-  const deliveryCharge = 0
 
-  console.log(totalPrice)
+  const deliveryCharge = 0
+  
+
 
   const removeFromCart = (id) => {
     dispatch(removeItemFromCart(id))
@@ -26,7 +27,7 @@ const Cart = () => {
               <div className='empty__list'>Your Shopping Cart is empty.</div>
               ) : (
                 <>
-                  <h5 className='cart_header border-0'>My Cart <span>({items.length} items)</span></h5>
+                  <h5 className='cart_header border-0'>MY CART <span>({items.length} items)</span></h5>
                   {items.map(item => {
                     const { id, title, image, price, rating } = item;
                     return (
@@ -34,7 +35,7 @@ const Cart = () => {
                         <div className="item d-flex">
                           <div className="img">
                             <img src={image} alt={title} />
-                            <span>(-) 1 (+)</span>
+                            {/* <span>(-) 1 (+)</span> */}
                           </div>
                           <div className="card_details">
                             <span className='cart__title'>{title}</span>
@@ -55,26 +56,26 @@ const Cart = () => {
 
           {Object.keys(items).length === 0 ? null :
             <div className="price__card card col-md-4">
-                <h5 className='cart_header'>Price Details</h5>
+                <h5 className='cart_header'>PRICE DETAILS</h5>
               <div className="card-body card-border">
                 <div className='row d-flex justify-content-between'>
                   <span>Price ({items.length})</span>
-                  <span>{totalPrice}</span>
+                  <span>${totalPrice}</span>
                 </div>
-                <div className='row d-flex justify-content-between'>
+                {/* <div className='row d-flex justify-content-between mt-2'>
                   <span>Quantity</span>
                   <span>2</span>
-                </div>
-                <div className='row d-flex justify-content-between'>
+                </div> */}
+                <div className='row d-flex justify-content-between mt-2'>
                   <span>Delivery Charges</span>
-                  <span>FREE</span>
+                  <span className='text-success'>FREE</span>
                 </div>
-                <div className="row d-flex justify-content-between">
-                  <span>Amount Payable</span>
-                  <span>{totalPrice + deliveryCharge}</span>
+                <div className="row d-flex justify-content-between mt-4 pt-2 pb-2 border-top border-bottom">
+                  <span><strong>Amount Payable</strong></span>
+                  <span>${totalPrice + deliveryCharge}</span>
                 </div>
               </div>
-              <div className='shop__btn'>
+              <div className='shop__btn d-flex justify-content-between'>
                 <Link to='/'>
                   <button className='btn btn-outline-warning m-1 mb-3'>CONTINE SHOPPING</button>
                 </Link>

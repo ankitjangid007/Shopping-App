@@ -3,77 +3,113 @@
     margin-bottom: 20px;
 }
 
-@media(max-width: 425px){
-    .navbar {
-        margin-bottom: 0px;
-    }
+li {
+    list-style: none;
 }
 
-.logo {
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    text-transform: uppercase;
+a {
+    text-decoration: none !important;
 }
 
-.logo a {
-    color: #000;
-}
-
-.logo a:hover {
-    text-decoration: none;
-    color: rgb(243, 113, 7);
-}
-
-.logo span {
-    font-size: larger;
-    font-weight: bold;
-    font-family: 'Roboto', sans-serif;
-    letter-spacing: 0.6rem;
-}
-
-
-.icons {
+.navbar {
     display: flex;
-    flex-direction: row;
-    font-size: 22px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 1rem;
+}
+
+.nav-link{
+    font-size: 1.6rem;
+    font-weight: 400;
     color: #fff;
 }
 
-.icons > a {
+.nav-logo {
+    font-size: 2.1rem;
+    font-weight: 500;
     color: #fff;
 }
 
-.cart__icon {
-    position: relative;
-    margin-right: 20px;
+.nav-logo:hover {
+    color: tomato;
 }
 
-.wishlist_icon {
+.icon {
     position: relative;
-    margin-right: 20px;
 }
 
 .badge {
     font-size: 12px;
     position: absolute;
-    top: -4px;
-    right: -8px;
+    top: 5px;
+    right: 8px;
     background-color: tomato;
     border-radius: 50%;
 }
 
-.bar__icon {
-    color: #fff;
-    font-size: 22px;
+.icon-title {
     display: none;
 }
 
-@media (max-width: 768px)  {
-    .bar__icon {
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        right: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #4e5b68;;
+        width: 100%;
+        z-index: 1;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgb(0 0 0 / 87%);;
+    }
+
+    .icon-title {
         display: block;
     }
-    .icons {
-        display: none;
+
+    .show-nav-menu {
+        right: 0 !important;
+        align-items: flex-start;
+    }
+
+    .nav-item > a {
+        color: #fff;
+        display: flex;
+        align-items: center;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
     }
 }
+
+
+
+

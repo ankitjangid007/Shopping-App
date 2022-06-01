@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Header.css'
 import { BsFillBookmarkHeartFill } from 'react-icons/bs'
@@ -7,38 +7,48 @@ import { useSelector } from 'react-redux'
 
 const Header = () => {
 
+  const [show, setShow] = useState(false)
   const wishlistCount = useSelector(state => state.wishlist.items.length)
   const cartCount = useSelector(state => state.cart.cartItem.length)
 
-  return (
-    <div className='navbar navbar-default navbar-fixed-top'>
-      <div className="logo">
-        <Link to='/'>
-          <span>Shopping</span>
-        </Link>
-      </div>
-      <div className="icons">
-        <Link to='/wishlist'>
-          <div className="wishlist_icon">
-            <BsFillBookmarkHeartFill />
-            <span className='badge'>{wishlistCount}</span>
-          </div>
-        </Link>
-        <Link to='/cart'>
-          <div className="cart__icon">
-            <FaShoppingCart />
-            <span className='badge'>{cartCount}</span>
-          </div>
-        </Link>
+  const toggleNavbar = () => {
+    setShow(!show)
+  }
 
-        <div className="user__icon">
-          <FaUserCircle />
-        </div>
-      </div>
-        <div className="bar__icon">
-          <FaBars />
-        </div>
-    </div>
+  return (
+    <header className='header'>
+      <nav className="navbar">
+              <Link to='/' className="nav-logo">SHOPPING</Link>
+              <ul className={show ? 'nav-menu show-nav-menu' : 'nav-menu'}>
+                  <li className="nav-item" onClick={toggleNavbar}>
+                    <Link to='/wishlist'>
+                      <div className="icon nav-link">
+                        <BsFillBookmarkHeartFill />
+                        <span className='badge'>{wishlistCount}</span>
+                      </div>
+                      <span className='icon-title'>MY WISHLIST</span>
+                    </Link>
+                  </li>
+                  <li className="nav-item" onClick={toggleNavbar}>
+                    <Link to='/cart'>
+                      <div className="icon nav-link">
+                        <FaShoppingCart />
+                        <span className='badge'>{cartCount}</span>
+                      </div>
+                      <span className='icon-title'>MY CART</span>
+                    </Link>
+                  </li>
+                  <li className="nav-item" onClick={toggleNavbar}>
+                    <div className="nav-link">
+                      <FaUserCircle />
+                    </div>
+                  </li>
+              </ul>
+              <div className="hamburger nav-link" onClick={toggleNavbar}>
+                <FaBars />
+              </div>
+          </nav>
+      </header>
   )
 }
 

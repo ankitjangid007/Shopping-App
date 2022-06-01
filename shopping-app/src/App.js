@@ -5,6 +5,7 @@ import ProductListing from './components/ProductListing';
 import ProductDetail from './components/productDetail/ProductDetail';
 import Wishlist from './components/wishlist/Wishlist';
 import Cart from './components/cart/Cart';
+import Home from './components/Home';
 
 function App() {
   return (

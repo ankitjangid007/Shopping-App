@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { selectedProduct, removeSelectedProduct, addProductToCart } from '../../redux/actions/productAction'
+import { selectedProduct, removeSelectedProduct, addProductToCart, fetchProduct } from '../../redux/actions/productAction'
 import './ProductDetail.css'
 import ReactImageMagnify from 'react-image-magnify';
 
@@ -13,16 +13,9 @@ const ProductDetail = () => {
   const product = useSelector(state => state.product)
   const { image, title, price, description } = product
 
-  const fetchProductDetail = async(id) => {
-    const response = await axios.get(`https://fakestoreapi.com/products/${id}`)
-    .catch(err => console.log('Err:', err))
-
-    dispatch(selectedProduct(response.data))
-  }
-
   useEffect(() => {
     if(productId && productId !== '') {
-      fetchProductDetail(productId)
+      dispatch(fetchProduct(productId))
     }
     return () => {
       dispatch(removeSelectedProduct())
@@ -37,7 +30,14 @@ const ProductDetail = () => {
   return (
       <div className="container">
         {Object.keys(product).length === 0 ? (
-          <div>Loading product details...</div>
+          <div style={{position: 'relative'}} className='d-flex justify-content-center'>
+            <div className="spinner-border" style={{width: "3rem", height: "3rem", position: 'absolute'}} role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+            <div className="spinner-grow" style={{width: "3rem", height: "3rem", position: 'absolute'}} role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
         ) : 
         (
           <div className="row">

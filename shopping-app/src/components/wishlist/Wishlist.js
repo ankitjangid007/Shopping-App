@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import './Wishlist.css'
 import { MdDeleteForever } from 'react-icons/md'
 import { BsStarFill } from 'react-icons/bs'
-import { removeWishlistedItem } from '../../redux/actions/productAction'
+import { addProductToCart, removeWishlistedItem } from '../../redux/actions/productAction'
 import { Link } from 'react-router-dom'
 
 const Wishlist = () => {
@@ -13,6 +13,10 @@ const Wishlist = () => {
 
   const removeFromWishlist = (id) => {
     dispatch(removeWishlistedItem(id))
+  }
+
+  const addCartItem = (item) => {
+    dispatch(addProductToCart(item))
   }
 
   return (
@@ -45,7 +49,7 @@ const Wishlist = () => {
                             </div>
                             <span className='wishlist__price'>${price}</span>
                             <div className="buttons">
-                              <button className='btn btn-outline-success'>Add to cart</button>
+                              <button className='btn btn-outline-success' onClick={() => addCartItem(item)}>Add to cart</button>
                               <button className='btn btn-outline-danger remove_btn'  onClick={() => removeFromWishlist(id)}>Remove</button>
                             </div>
                           </div>
